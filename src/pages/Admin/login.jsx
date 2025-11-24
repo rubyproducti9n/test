@@ -1,5 +1,17 @@
 import React, { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import '@material/web/slider/slider.js'
+// import { styles as themeStyles } from '@material/web/theme/theme.js'
+
+function App() {
+  return (
+    <>
+      <style>{themeStyles.cssText}</style>
+      <md-filled-button>Click</md-filled-button>
+    </>
+  )
+}
+
 
 export default function AdminLogin() {
   const navigate = useNavigate()
@@ -30,6 +42,14 @@ export default function AdminLogin() {
   return (
     <>
       <style>{`
+:root {
+  /* System tokens */
+  --md-sys-color-primary: #009d1dff;
+
+  /* Component tokens */
+  --md-slider-handle-shape: 110px;
+}
+
         .admin-container {
           display: flex;
           min-height: 100vh;
@@ -170,6 +190,10 @@ export default function AdminLogin() {
                 Create Account
               </span>
             </p>
+
+<div style={{ padding: 32 }}>
+      <md-slider step="10" ticks min="0" max="100" labeled></md-slider>
+    </div>
 
             <button type="submit" className="login-btn">Login</button>
           </form>

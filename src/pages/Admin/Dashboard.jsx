@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import Topbar from "../../components/admin/topbar";
 import Sidebar from "../../components/admin/Sidebar";
-// import OverviewChart from "../../components/admin/OverviewChart";
+import OverviewChart from "../../components/admin/OverviewChart";
 import LogoutModal from "../../components/admin/LogoutModal";
 import VectorIcon from "../../assets/icons/stafficon/Vector-3.svg";
 
@@ -227,7 +227,7 @@ export default function Dashboard({ onLogout }) {
                   </div>
 
                   {/* ✅ Overview Chart Section */}
-                  {/* <OverviewChart /> */}
+                  <OverviewChart />
                 
                 </div>
               }

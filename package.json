@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@material/web": "^2.4.1",
     "@tailwindcss/vite": "^4.1.12",
     "axios": "^1.11.0",
     "country-state-city": "^3.2.1",
