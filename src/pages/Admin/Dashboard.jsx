@@ -4,7 +4,7 @@ import Topbar from "../../components/admin/topbar";
 import Sidebar from "../../components/admin/Sidebar";
 // import OverviewChart from "../../components/admin/OverviewChart";
 import LogoutModal from "../../components/admin/LogoutModal";
-import VectorIcon from "../../assets/icons/stafficon/vector_3.svg";
+import VectorIcon from "../../assets/icons/stafficon/Vector-3.svg";
 
 
 // Pages

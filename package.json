@@ -17,7 +17,6 @@
     "react-dom": "^19.2.0",
     "react-leaflet": "^5.0.0",
     "react-router-dom": "^7.8.1",
-    "rechart": "^0.0.1",
     "recharts": "^3.3.0"
   },
   "devDependencies": {
@@ -37,10 +36,9 @@
     "vite": "^7.1.2"
   },
   "overrides": {
-  "inflight": "2.0.0",
-  "glob": "^10.3.10",
-  "q": "1.5.1",
-  "core-js": "^3.36.1"
-}
-
+    "inflight": "2.0.0",
+    "glob": "^10.3.10",
+    "q": "1.5.1",
+    "core-js": "^3.36.1"
+  }
 }
