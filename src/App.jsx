@@ -25,10 +25,10 @@ export default function App() {
           <Route path="/login" element={<AdminLogin />} />
           <Route path="/AdminRegister" element={<AdminRegister />} />
 
-          <Route
+          {/* <Route
             path="/dashboard/*"
             element={token ? <Dashboard /> : <Navigate to="/login" replace />}
-          />
+          /> */}
         </Routes>
       </Suspense>
     </BrowserRouter>
