@@ -7,40 +7,23 @@ export default function AdminLogin() {
   const [emailValue, setEmailValue] = useState("")
   const [passwordValue, setPasswordValue] = useState("")
 
-  const handleLogin = async (e) => {
+  const STATIC_EMAIL = "admin@bentork.com"
+  const STATIC_PASSWORD = "admin123"
+
+  const handleLogin = (e) => {
     e.preventDefault()
 
-    // if (!emailValue || !passwordValue) {
-    //   alert("Please enter email and password")
-    //   return
-    // }
+    if (!emailValue || !passwordValue) {
+      alert("Please enter email and password")
+      return
+    }
 
-    try {
-      const response = await fetch("http://localhost:8080/api/admin/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          emailOrMobile: emailValue,
-          password: passwordValue,
-        }),
-      })
-
-      const data = await response.json()
-      console.log("Login response:", data)
-
-      if (!response.ok) {
-        alert(data.message || "Invalid login credentials")
-        return
-      }
-
-      localStorage.setItem("token", data.token)
-
+    if (emailValue === STATIC_EMAIL && passwordValue === STATIC_PASSWORD) {
       alert("Login successful")
+      localStorage.setItem("token", "static_dummy_token")
       navigate("/dashboard", { replace: true })
-
-    } catch (err) {
-      console.error("Login error:", err)
-      // alert("Something went wrong. Try again later.")
+    } else {
+      alert("Invalid credentials")
     }
   }
 
@@ -188,7 +171,7 @@ export default function AdminLogin() {
               </span>
             </p>
 
-            <button type="submit" className="login-btn" onClick={() => navigate("/Dashboard")}>Login</button>
+            <button type="submit" className="login-btn">Login</button>
           </form>
         </div>
       </div>
