@@ -40,7 +40,7 @@ export default function AdminLogin() {
 
     } catch (err) {
       console.error("Login error:", err)
-      alert("Something went wrong. Try again later.")
+      // alert("Something went wrong. Try again later.")
     }
   }
 
