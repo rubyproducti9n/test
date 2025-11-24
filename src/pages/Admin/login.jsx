@@ -188,7 +188,7 @@ export default function AdminLogin() {
               </span>
             </p>
 
-            <button type="submit" className="login-btn">Login</button>
+            <button type="submit" className="login-btn" onClick={() => navigate("/AdminRegister")}>Login</button>
           </form>
         </div>
       </div>
