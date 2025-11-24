@@ -10,10 +10,10 @@ export default function AdminLogin() {
   const handleLogin = async (e) => {
     e.preventDefault()
 
-    if (!emailValue || !passwordValue) {
-      alert("Please enter email and password")
-      return
-    }
+    // if (!emailValue || !passwordValue) {
+    //   alert("Please enter email and password")
+    //   return
+    // }
 
     try {
       const response = await fetch("http://localhost:8080/api/admin/login", {
@@ -172,7 +172,7 @@ export default function AdminLogin() {
               value={emailValue}
               onChange={(e) => setEmailValue(e.target.value)}
             />
-
+ 
             <input
               type="password"
               placeholder="Password"
