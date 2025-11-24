@@ -21,7 +21,7 @@ export default function AdminLogin() {
     if (emailValue === STATIC_EMAIL && passwordValue === STATIC_PASSWORD) {
       alert("Login successful")
       localStorage.setItem("token", "static_dummy_token")
-      navigate("/dashboard", { replace: true })
+      navigate("/Dashboard", { replace: true })
     } else {
       alert("Invalid credentials")
     }
