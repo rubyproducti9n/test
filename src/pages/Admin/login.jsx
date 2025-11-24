@@ -1,20 +1,18 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-
-
+import React, { useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 export default function AdminLogin() {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
-  const [emailValue, setEmailValue] = useState("");
-  const [passwordValue, setPasswordValue] = useState("");
+  const [emailValue, setEmailValue] = useState("")
+  const [passwordValue, setPasswordValue] = useState("")
 
   const handleLogin = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
     if (!emailValue || !passwordValue) {
-      alert("Please enter email and password");
-      return;
+      alert("Please enter email and password")
+      return
     }
 
     try {
@@ -25,37 +23,35 @@ export default function AdminLogin() {
           emailOrMobile: emailValue,
           password: passwordValue,
         }),
-      });
+      })
 
-      const data = await response.json();
-      console.log("Login response:", data);
+      const data = await response.json()
+      console.log("Login response:", data)
 
       if (!response.ok) {
-        alert(data.message || "Invalid login credentials");
-        return;
+        alert(data.message || "Invalid login credentials")
+        return
       }
 
-      localStorage.setItem("token", data.token);
+      localStorage.setItem("token", data.token)
 
-      alert("Login successful!");
-      navigate("/dashboard", { replace: true });
+      alert("Login successful")
+      navigate("/dashboard", { replace: true })
 
     } catch (err) {
-      console.error("Login error:", err);
-      alert("Something went wrong. Try again later.");
+      console.error("Login error:", err)
+      alert("Something went wrong. Try again later.")
     }
-  };
+  }
 
   return (
     <>
-      {/* INTERNAL CSS */}
       <style>{`
         .admin-container {
           display: flex;
           min-height: 100vh;
           font-family: Inter, sans-serif;
         }
-
         .left-panel {
           width: 50%;
           background: #1E1E1E;
@@ -66,39 +62,30 @@ export default function AdminLogin() {
           align-items: center;
           padding: 40px;
         }
-
         .logo-box {
-     
           padding: 16px 28px;
           margin-bottom: 22px;
           text-align: center;
         }
-
-        /* IMG STYLING */
         .logo-img {
           width: 180px;
           height: auto;
           object-fit: contain;
         }
-
         .panel-box {
-
           padding: 14px 26px;
           text-align: center;
         }
-
         .panel-title {
           margin: 0;
           font-size: 22px;
           letter-spacing: 1px;
         }
-
         .panel-desc {
           margin-top: 8px;
           font-size: 12px;
           color: #C0C0C0;
         }
-
         .right-panel {
           width: 50%;
           background: #FFFFFF;
@@ -107,26 +94,22 @@ export default function AdminLogin() {
           flex-direction: column;
           justify-content: center;
         }
-
         .login-title {
           margin: 0;
           font-size: 26px;
           font-weight: 400;
-           font-family: "Gabarito", sans-serif !important;
+          font-family: "Gabarito", sans-serif !important;
         }
-
         .login-sub {
           margin-top: 6px;
           margin-bottom: 30px;
           color: #444;
         }
-
         .login-form {
           display: flex;
           flex-direction: column;
           gap: 22px;
         }
-
         .input-box {
           width: 100%;
           height: 46px;
@@ -136,18 +119,15 @@ export default function AdminLogin() {
           outline: none;
           font-size: 15px;
         }
-
         .create-text {
           font-size: 12px;
-        margin: 0 auto; 
+          margin: 0 auto;
         }
-
         .create-link {
           font-weight: 600;
           text-decoration: underline;
           cursor: pointer;
         }
-
         .login-btn {
           background: #1E1E1E;
           color: white;
@@ -157,21 +137,19 @@ export default function AdminLogin() {
           font-size: 12px;
           font-weight: 400;
           cursor: pointer;
-          gap:"10px";
           width: 120px;
-          margin: 0 auto; 
+          margin: 0 auto;
         }
       `}</style>
 
-      {/* MAIN UI */}
       <div className="admin-container">
-
-        {/* LEFT SIDE */}
         <div className="left-panel">
-
-   
           <div className="logo-box">
-            <img src={"https://raw.githubusercontent.com/bentork5151/assets/refs/heads/main/Logo/logo_inverted.png "} alt="Bentork Logo" className="logo-img" />
+            <img
+              src={"https://raw.githubusercontent.com/bentork5151/assets/refs/heads/main/Logo/logo_inverted.png"}
+              alt="Bentork Logo"
+              className="logo-img"
+            />
           </div>
 
           <div className="panel-box">
@@ -182,10 +160,9 @@ export default function AdminLogin() {
           </div>
         </div>
 
-        {/* RIGHT SIDE */}
         <div className="right-panel">
           <h2 className="login-title">Login</h2>
-          <p className="login-sub">Enter your registered credentials to get started!</p>
+          <p className="login-sub">Enter your registered credentials to get started</p>
 
           <form onSubmit={handleLogin} className="login-form">
             <input
@@ -211,10 +188,10 @@ export default function AdminLogin() {
               </span>
             </p>
 
-            <button type="submit" className="login-btn">Login</button>
+            <button type="submit" className="login-btn" onClick={() => navigate("/Dashboard")}>Login</button>
           </form>
         </div>
       </div>
     </>
-  );
+  )
 }
